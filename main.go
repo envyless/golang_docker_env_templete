@@ -1,5 +1,7 @@
 // check how to use golang
-// https://gobyexample.com/
+// /* samples */  https://gobyexample.com/
+// /* packages */ https://pkg.go.dev/
+// /* learn go */ https://go.dev/learn/
 
 package main
 

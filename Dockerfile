@@ -30,7 +30,6 @@ ENV GOTOOLSTOBUILD \
         honnef.co/go/tools/cmd/staticcheck \
         github.com/client9/misspell/cmd/misspell
 
-
 WORKDIR /go/src/app
 COPY . .
 

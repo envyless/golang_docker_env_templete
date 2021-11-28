@@ -1,5 +1,7 @@
 package tetris
 
+import "github.com/eiannone/keyboard"
+
 // Block ... have position, atom of game blocks
 type Block struct {
 	x, y      int
@@ -74,13 +76,19 @@ func (ctrl *BlockController) Draw() string {
 }
 
 // Update will updates that all blocks states
-func (ctrl *BlockController) Update() {
+func (ctrl *BlockController) Update(engine *GameEngine) {
 	if ctrl.currentBlock == nil {
 		ctrl.currentBlock = generateBlock()
 	}
 
 	for _, v := range ctrl.currentBlock {
 		v.y++
+
+		if engine.input == keyboard.KeyArrowLeft && v.x > 0 {
+			v.x--
+		} else if engine.input == keyboard.KeyArrowRight && v.x < ctrl.mapSizeX {
+			v.x++
+		}
 	}
 }
 
