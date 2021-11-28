@@ -1,3 +1,6 @@
+// check how to use golang
+// https://gobyexample.com/
+
 package main
 
 import (

@@ -2,6 +2,7 @@ package tetris
 
 import (
 	"fmt"
+	"time"
 )
 
 type GameEngine struct {
@@ -30,9 +31,10 @@ func StartGame() {
 	for {
 		engine.Update()
 		uiString = blockCtrl.Draw()
-		fmt.Print("\033[H\033[2J")
-		fmt.Println(uiString)
+		fmt.Print("\033[H\033[2J") // clear fmt
+		fmt.Println(uiString)      // show ui string
+
 		//tick
-		//time.Sleep(time.Second * 1)
+		time.Sleep(time.Second * 1)
 	}
 }
