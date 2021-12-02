@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine
+FROM golang:1.16-alpine
 
 
 RUN apk update && apk add alpine-sdk git bash build-base
@@ -33,7 +33,7 @@ ENV GOTOOLSTOBUILD \
 WORKDIR /go/src/app
 COPY . .
 
-#RUN go get -d -v ./...
+RUN go get -d -v ./...
 #RUN go install -v ./...
 
 CMD ["app"]
